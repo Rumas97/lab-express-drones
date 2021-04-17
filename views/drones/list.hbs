@@ -1,1 +1,25 @@
 <h2>Available drones</h2>
+
+{{#each allDrones}}
+
+
+<ul>
+
+<li>name:{{this.name}}, number of propellers: {{this.propellers}},max Speed: {{this.maxSpeed}}</li>
+
+</ul>
+
+{{!-- why did it not work when the form was inside <ul></ul> ???--}}
+ {{!-- why this.id and not data.id??? --}}
+
+<form action="/drones/{{this.id}}/edit" method="GET"> 
+    <button type="submit">Edit</button>
+</form>
+
+<form action="/drones/{{this.id}}/delete" method="POST">
+  <button type="submit">Delete</button>
+</form>
+
+
+
+{{/each}}
